@@ -3,49 +3,150 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 
-    <html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin Area | Trainers</title>
+        <style><%@include file="/css/bootstrap.min.css"%></style>
         <style><%@include file="/css/style.css"%></style>
-        <link rel="shortcut icon" href="https://i.ibb.co/NYjrFJC/keyboard.png" type="image/x-icon">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Trainers Admin</title>
+        <link rel="shortcut icon" href="https://i.ibb.co/NYjrFJC/keyboard.png" type="image/x-icon">  
     </head>
 
     <body>
-        <div id="page-container">
-            <div class="bg">
+        
+   <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="https://i.ibb.co/YfsyLGp/logo.png" alt=""></a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="pages.html">Pages</a></li>
+          <li><a href="posts.html">Posts</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li class="active"><a href="trainers.html">Trainers</a></li>
+          <li><a href="students.html">Students</a></li>
+          <li><a href="assignments.html">Assignments</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Welcome</a></li>
+          <li><a href="login.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-                <h1 class="display-4">Coding School
-                    <br><span class="text-muted">Trainers Administration Page</span>
-                </h1>
+  <!-- Header -->
 
-                <div class="page">
+    <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <h1><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Trainers<small> Manage Trainers</small>
+          </h1>
+        </div>
+        <div class="col-md-2">
+          <div class="dropdown create">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="true">
+              Trainer Add Menu
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="${pageContext.request.contextPath}/trainer/form.htm">Add Trainer</a></li>
+              <li>Add Course to a Trainer
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+              
+  <section id="breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb">
+        <li><a href="index.html">Dashboard</a></li>
+        <li class="active">Trainers</li>
+      </ol>
+    </div>
+  </section>
 
-                    <div class="container border up col-8" id="main">
+  <!-- Main -->
+  <section id="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
 
-                        <div class="row">
-                            <div class="col-4">
-                                <a href="${pageContext.request.contextPath}/trainer/form.htm">Insert Trainer</a>
-                            </div>
-                            <div class="col-8 pull-right">
-                                <img src='<c:url value="https://www.freeiconspng.com/uploads/upload-icon-31.png"></c:url>' width="110" class="float-right"/> 
-                                </div>
-                        </div>
+          <div class="list-group">
+            <a href="index.html" class="list-group-item active main-color-bg">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Dashboard
+            </a>
+            <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt"
+                aria-hidden="true"></span> Pages <span class="badge">1</span></a>
+            <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil"
+                aria-hidden="true"></span> Posts <span class="badge">33</span></a>
+            <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user"
+                aria-hidden="true"></span> Users <span class="badge">20</span></a>
+            <a href="courses.html" class="list-group-item"><i class="fas fa-book"></i> Courses
+              <span class="badge">4</span>
+            </a>
+            <a href="trainers.html" class="list-group-item"><i class="fas fa-chalkboard-teacher"></i> Trainers <span
+                class="badge">10</span>
+            </a>
+            <a href="students.html" class="list-group-item"> <i class="fas fa-user-graduate"></i> Students <span
+                class="badge">40</span>
+            </a>
+            <a href="assignments.html" class="list-group-item"><i class="fas fa-file-alt"></i> Assignments <span
+                class="badge">81</span>
+            </a>
+          </div>
 
-                    </div>
+          <div class="well">
+            <h4>Disk Space Used</h4>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                style="width: 60%;">
+                60%
+              </div>
+            </div>
+            <h4>Bandwidth Used </h4>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                style="width: 40%;">
+                40%
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
 
-                    <div class="col-12" id="large">
-                            
-                        <div class="col-2" id="empty">       
-                        </div>
-
-                        <div class="container border down col-8" id="main">
-
-                            <h5>Current Stuff</h5>
-                            <c:choose>
+          <!-- Trainers Table -->
+          <div class="panel panel-default">
+            <div class="panel-heading main-color-bg">
+              <h3 class="panel-title">Trainers</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control" type="text" placeholder="Filter Trainers...">
+                </div>
+              </div>
+              <br>
+        
+                           <c:choose>
                                 <c:when test = "${requestScope.trainers.size()>0}">
 
         
@@ -68,8 +169,8 @@
                                             <td class="text-center" style="overflow:hidden"> <c:out value = "${i.getFirstName()}"/> </td>
                                             <td class="text-center" style="overflow:hidden"> <c:out value = "${i.getSecondName()}"/> </td> 
                                             <td class="text-center" style="overflow:hidden"> <c:out value = "${i.getTrainerSubject()}"/> </td> 
-                                            <td class="text-center">  <a href="${pageContext.request.contextPath}/trainer/Update.htm?id=${i.getTrainerId()}"> Update</a> </td>
-                                            <td class="text-center"> <a href="${pageContext.request.contextPath}/trainer/Delete.htm?id=${i.getTrainerId()}" onclick="return confirm('Are you sure you want to delete the file?')"> Delete  </a> </td> 
+                                            <td class="text-center">  <a class="btn btn-default" href="${pageContext.request.contextPath}/trainer/Update.htm?id=${i.getTrainerId()}"> Update</a> </td>
+                                            <td class="text-center"> <a class="btn btn-danger" href="${pageContext.request.contextPath}/trainer/Delete.htm?id=${i.getTrainerId()}" onclick="return confirm('Are you sure you want to delete the file?')"> Delete  </a> </td> 
                                         </tr>
                                     </c:forEach>
                                     </tbody>
@@ -80,52 +181,27 @@
                                     <span class="text-muted">No files uploaded</span>
                                 </c:otherwise>                         
                             </c:choose>
-                        </div>
-                            
-                        <div class="col-2" id="icons">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <a class="fb-ic" href="">
-                                            <i class="fab fa-facebook-f fa-md fa-3x"> </i>
-                                        </a>
-                                        <a class="tw-ic" href="">
-                                            <i class="fab fa-twitter fa-md fa-3x"> </i>
-                                        </a>
-                                        <a class="ins-ic" href="">
-                                            <i class="fab fa-instagram fa-md fa-3x"> </i> 
-                                        </a>
-                                        <img id="logo" src="https://i.ibb.co/1n01Zsm/logo.png">
-                                    </div>
-                                </div>
-                            </div>  
-                        </div>
-                        
-                        
-                    </div>
-                                
-                </div> 
-                                
             </div>
+          </div>
+
         </div>
-                                
-        <footer class="page-footer" id="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <span>© 2019 Copyright: Coding School</span> <img id="footer_logo" src="https://i.ibb.co/NYjrFJC/keyboard.png"/>
-                    </div>
-                </div>
-            </div>  
-        </footer>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p><img src="https://i.ibb.co/YfsyLGp/logo.png"/> Copyright AdminCS, &copy; 2019</p>
+  </footer>
 
        
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>      
-            <script src="https://kit.fontawesome.com/52e2938880.js" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
             <script src="js/custom.js" type="text/javascript"></script>
+            <script src="js/bootstrap.min.js" type="text/javascript"></script>
+ </body>
         
 
-    </body>
-</html>
+ </html> 
+
+
+ 
