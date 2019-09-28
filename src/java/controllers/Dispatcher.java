@@ -36,7 +36,7 @@ public class Dispatcher {
 
         td.insertTrainer(trainer);
 
-        return "forward:/trainer/home.htm";
+        return "redirect:/trainer/home.htm";
     }
 
     @RequestMapping(value = "Update.htm")
@@ -54,7 +54,7 @@ public class Dispatcher {
 
         td.mergeTrainer(trainer);
 
-        return "forward:/trainer/home.htm";
+        return "redirect:/trainer/home.htm";
     }
 
     @RequestMapping(value = "Delete.htm")
@@ -64,7 +64,7 @@ public class Dispatcher {
         System.out.println(id);
         td.deleteTrainer(id);
 
-        return "forward:/trainer/home.htm";
+        return "redirect:/trainer/home.htm";
     }
 
 }
