@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1> Admin Area<small>Add Trainer</small></h1>
+                        <h1> Admin Area<small> Add Trainer</small></h1>
                     </div>
                 </div>
             </div>
@@ -36,16 +36,16 @@
                             
                             <div class="form-group">
                                 <spring:label  path="firstName">First Name</spring:label>
-                                <spring:input path="firstName" cssClass="form-control"/> 
+                                <spring:input path="firstName" cssClass="form-control" placeholder="Enter Trainer's First Name..."/> 
                             </div>
                             <div class="form-group">
                                 <spring:label path="secondName">Last Name</spring:label>
-                                <spring:input path="secondName" cssClass="form-control"/>
+                                <spring:input path="secondName" cssClass="form-control" placeholder="Enter Trainer's Second Name..."/>
 
                             </div>
                             <div class="form-group">
                                 <spring:label path="trainerSubject">Subject</spring:label>
-                                <spring:input path="trainerSubject" cssClass="form-control"/>
+                                <spring:input path="trainerSubject" cssClass="form-control" placeholder="Enter Trainer's Subject..."/>
                             </div>
                             </br>
                             <div class="form-group">

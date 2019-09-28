@@ -19,12 +19,12 @@
     <error-page>
         <!-- Missing resource -->
         <error-code>404</error-code>
-        <location>/404</location>
+        <location>/error404.html</location>
     </error-page>
     <error-page>
         <!-- Uncaught exception -->
         <error-code>500</error-code>
-        <location>/500</location>
+        <location>/error500.html</location>
     </error-page>
     <session-config>
         <session-timeout>
