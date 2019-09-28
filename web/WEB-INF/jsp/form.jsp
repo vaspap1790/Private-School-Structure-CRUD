@@ -16,7 +16,7 @@
     <body>
 
         <jsp:include page="navbar.jsp" />
-        
+
         <header id="header">
             <div class="container">
                 <div class="row">
@@ -26,32 +26,34 @@
                 </div>
             </div>
         </header>
-        
+
         <section id="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-        
-                        <spring:form modelAttribute="trainer" action="${pageContext.request.contextPath}/trainer/post.htm" method="POST" cssClass="well" >
-                            <table>
-                                <tr>
-                                    <td><spring:label path="firstName">First Name</spring:label></td>
-                                    <td><spring:input path="firstName" /></td>
-                                </tr>
-                                <tr>
-                                    <td><spring:label path="secondName">Last Name</spring:label></td>
-                                    <td><spring:input path="secondName" /></td>
-                                </tr>
-                                <tr>
-                                    <td><spring:label path="trainerSubject">Subject</spring:label></td>
-                                    <td><spring:input path="trainerSubject" /></td>
-                                </tr>
-                                <tr>
-                                    <input type="submit"> </input>
-                                </tr>
-                            </table>
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <spring:form modelAttribute="trainer" action="${pageContext.request.contextPath}/trainer/post.htm" method="POST" cssClass="well" id="addTrainerForm">
+                            
+                            <div class="form-group">
+                                <spring:label  path="firstName">First Name</spring:label>
+                                <spring:input path="firstName" cssClass="form-control"/> 
+                            </div>
+                            <div class="form-group">
+                                <spring:label path="secondName">Last Name</spring:label>
+                                <spring:input path="secondName" cssClass="form-control"/>
+
+                            </div>
+                            <div class="form-group">
+                                <spring:label path="trainerSubject">Subject</spring:label>
+                                <spring:input path="trainerSubject" cssClass="form-control"/>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                <button type="submit" Class="btn btn-primary btn-block">Save</button>
+                            </div>
+
                         </spring:form>
-                        
+
                     </div>
                 </div>
             </div>
@@ -60,9 +62,11 @@
         <jsp:include page="footer.jsp" />              
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
         <script src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
-        <script src="js/custom.js" type="text/javascript"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script><%@include file="/js/custom.js"%></script>
+        <script><%@include file="/js/bootstrap.min.js"%></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
     </body>
